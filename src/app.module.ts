@@ -17,6 +17,8 @@ import { UploadController } from './upload/upload.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UploadModule } from './upload/upload.module';
+import { ChatModule } from './chat/chat.module';
+import { ChatController } from './chat/chat.controller';
 
 
 @Module({
@@ -29,8 +31,8 @@ import { UploadModule } from './upload/upload.module';
         };
       },
       inject: [ConfigService],
-    }), AboutModule, HomeModule, SupportModule, ContactModule, NavbarModule, FooterModule,UploadModule],
-  controllers: [AppController, AboutController, HomeController, SupportController, ContactController, NavbarController, FooterController, UploadController],
+    }), AboutModule, HomeModule, SupportModule, ContactModule, NavbarModule, FooterModule,UploadModule, ChatModule],
+  controllers: [AppController, AboutController, HomeController, SupportController, ContactController, NavbarController, FooterController, UploadController,ChatController],
   providers: [AppService],
 })
 export class AppModule {}
