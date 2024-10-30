@@ -7,15 +7,13 @@ import { FooterService } from './footer.service';
 export class FooterController {
     constructor(private readonly footerService: FooterService) {}
 
-    @MessagePattern('create_footer') // Listen for 'create_footer' messages
+    @MessagePattern('create_footer')
     async create(@Payload() body: any) {
         return this.footerService.create(body);
     }
 
-    @MessagePattern('find_all_footers') // Listen for 'find_all_footers' messages
+    @MessagePattern('find_all_footers')
     async findAll() {
         return this.footerService.findAll();
     }
-
-    // Add more methods for update, delete, etc.
 }

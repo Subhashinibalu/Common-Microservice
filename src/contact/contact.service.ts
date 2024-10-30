@@ -6,23 +6,20 @@ import { Contact, ContactDocument } from './contact.schema';
 
 @Injectable()
 export class ContactService {
-  constructor(@InjectModel(Contact.name) private contactModel: Model<ContactDocument>) {}
-
- 
+  constructor(@InjectModel(Contact.name) private contactModel: Model<ContactDocument>) {} 
   async upsert(body: any) {
-    const { _id, ...data } = body; // Extract _id for upsert
+    const { _id, ...data } = body;
   
-    // If _id is not provided, create a new one
+  
     if (!_id) {
       const newContact = new this.contactModel(data);
-      return await newContact.save(); // Save new document
+      return await newContact.save(); 
     }
   
-    // Perform the update without including _id in data
     return await this.contactModel.findOneAndUpdate(
-      { _id }, // Find by _id
-      { ...data }, // Only include other fields for the update
-      { new: true, upsert: true } // Options
+      { _id }, 
+      { ...data }, 
+      { new: true, upsert: true } 
     ).exec();
   }
   

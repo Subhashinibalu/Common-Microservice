@@ -9,11 +9,11 @@ export class FooterService {
     constructor(@InjectModel(Footer.name) private footerModel: Model<FooterDocument>) {}
 
     async create(body: any) {
-        const { _id, ...data } = body; // Extract `_id` and the rest of the data
+        const { _id, ...data } = body; 
         return this.footerModel.findOneAndUpdate(
-            { _id }, // The condition to find the existing document
-            data,    // The new data to set
-            { new: true, upsert: true } // Options: return the updated document and create if not found
+            { _id },
+            data,    
+            { new: true, upsert: true } 
         ).exec();
     }
 
@@ -24,6 +24,5 @@ export class FooterService {
         }
         return footers;
     }
-
-    // Add more methods for update, delete, etc.
+.
 }

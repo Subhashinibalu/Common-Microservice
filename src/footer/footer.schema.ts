@@ -10,7 +10,7 @@ export class FooterItem {
     name: string;
 
     @Prop()
-    link: string; // Optional
+    link: string; 
 }
 
 export const FooterItemSchema = SchemaFactory.createForClass(FooterItem);

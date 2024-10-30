@@ -19,6 +19,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UploadModule } from './upload/upload.module';
 import { ChatModule } from './chat/chat.module';
 import { ChatController } from './chat/chat.controller';
+import { TicketModule } from './ticket/ticket.module';
 
 
 @Module({
@@ -31,7 +32,7 @@ import { ChatController } from './chat/chat.controller';
         };
       },
       inject: [ConfigService],
-    }), AboutModule, HomeModule, SupportModule, ContactModule, NavbarModule, FooterModule,UploadModule, ChatModule],
+    }), AboutModule, HomeModule, SupportModule, ContactModule, NavbarModule, FooterModule,UploadModule, ChatModule, TicketModule],
   controllers: [AppController, AboutController, HomeController, SupportController, ContactController, NavbarController, FooterController, UploadController,ChatController],
   providers: [AppService],
 })

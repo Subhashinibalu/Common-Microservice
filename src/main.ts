@@ -17,3 +17,4 @@ async function bootstrap() {
 }
 
 bootstrap();
+// this is common microservice main file

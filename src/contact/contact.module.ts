@@ -7,10 +7,10 @@ import { Contact, ContactSchema } from './contact.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: Contact.name, schema: ContactSchema }]), // Ensure this is included
+    MongooseModule.forFeature([{ name: Contact.name, schema: ContactSchema }]), 
   ],
   controllers: [ContactController],
   providers: [ContactService],
-  exports: [ContactService], // Ensure this is exported for use in other modules. This allows other modules to use this service.  // eslint-disable-next-line prettier/prettier
+  exports: [ContactService],
 })
 export class ContactModule {}
