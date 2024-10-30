@@ -7,10 +7,10 @@ import { About, AboutSchema } from './about.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: About.name, schema: AboutSchema }]), // Ensure About schema is registered
+    MongooseModule.forFeature([{ name: About.name, schema: AboutSchema }]), 
   ],
   providers: [AboutService],
   controllers: [AboutController],
-  exports: [AboutService], // Export the service if needed in other modules
+  exports: [AboutService], 
 })
 export class AboutModule {}

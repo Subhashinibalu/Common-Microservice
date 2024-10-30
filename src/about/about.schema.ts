@@ -41,7 +41,7 @@ export class About {
   aboutcarddiv: {
     aboutquestion: string;
     aboutanswer: string;
-    aboutcards: [Card]; // Use the Card schema for this array
+    aboutcards: [Card]; 
   };
   
   @Prop()

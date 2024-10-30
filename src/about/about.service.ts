@@ -10,18 +10,14 @@ export class AboutService {
   constructor(@InjectModel(About.name) private aboutModel: Model<AboutDocument>) {}
 
   async create(body: any) {
-    let { _id, ...data } = body; // Extract _id for upsert
+    let { _id, ...data } = body; 
 
-    // // If _id is null or not provided, generate a new ObjectId
-    // if (_id == null) {
-    //   _id = new Types.ObjectId(); // Generate a new ObjectId
-    // }
 
     return this.aboutModel.findOneAndUpdate(
-      { _id }, // Find by _id
-      {$set:data}, // Data to update or insert
-      { new: true, upsert: true } // Options
-    ).exec(); // Return the promise
+      { _id }, 
+      {$set:data},
+      { new: true, upsert: true } 
+    ).exec(); 
   }
 
   async findAll() {
