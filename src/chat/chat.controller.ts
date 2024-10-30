@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 import { ChatService } from './chat.service';
@@ -9,7 +8,13 @@ export class ChatController {
 
   @MessagePattern({ cmd: 'upsert_chat' })
   async upsert(@Payload() body: any) {
-    return this.chatService.upsert(body);
+    console.log('Upsert chat:', body);
+   return this.chatService.upsert(body); 
+  }
+  @MessagePattern({ cmd: 'upsert_admin_chat' })
+  async upsertadminchat(@Payload() body: any) {
+    console.log('Upsert admin chat:', body);
+   return this.chatService.upsertadminchat(body); 
   }
 
   @MessagePattern({ cmd: 'find_all_chats' })
